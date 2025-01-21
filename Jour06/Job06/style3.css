@@ -1,0 +1,19 @@
+body {
+    background-color: #e6e6fa;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+form {
+    margin: 50px;
+    padding: 20px;
+    border: 1px solid #000;
+    background-color: #ffffff;
+}
+
+button {
+    background-color: #4682b4;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
