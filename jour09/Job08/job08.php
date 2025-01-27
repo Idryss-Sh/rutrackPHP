@@ -1,5 +1,5 @@
 <?php
-// Connexion à la base de données
+
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -11,7 +11,7 @@ if ($conn->connect_error) {
     die("Connexion échouée: " . $conn->connect_error);
 }
 
-$sql = "SELECT SUM(superficie) AS superficie FROM etage";
+$sql = "SELECT SUM(capacite) AS capacite_totale FROM salles";
 $result = $conn->query($sql);
 
 ?>
@@ -19,23 +19,22 @@ $result = $conn->query($sql);
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Superficie Totale des Étages</title>
+    <title>Capacité Totale des Salles</title>
 </head>
 <body>
 
 <table border="1">
     <thead>
         <tr>
-            <th>Superficie Totale</th>
+            <th>Capacité Totale</th>
         </tr>
     </thead>
     <tbody>
         <?php
         if ($result->num_rows > 0) {
-            
             while($row = $result->fetch_assoc()) {
                 echo "<tr>";
-                echo "<td>" . $row["superficie"] . "</td>";
+                echo "<td>" . $row["capacite_totale"] . "</td>";
                 echo "</tr>";
             }
         } else {
